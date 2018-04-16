@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def home
-  	@status_updates = StatusUpdate.all
+  	@status_updates = StatusUpdate.recent.all
   	@status_update = StatusUpdate.new
+
   end
 
   def friends
@@ -11,5 +12,9 @@ class PagesController < ApplicationController
   end
 
   def images
+  end
+
+  def loginregistar
+    @user = User.new
   end
 end

@@ -28,7 +28,7 @@ class StatusUpdatesController < ApplicationController
 
     respond_to do |format|
       if @status_update.save
-        format.html { redirect_to @status_update, notice: 'Status update was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Status update was successfully created.' }
         format.json { render :show, status: :created, location: @status_update }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StatusUpdatesController < ApplicationController
   def update
     respond_to do |format|
       if @status_update.update(status_update_params)
-        format.html { redirect_to @status_update, notice: 'Status update was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Status update was successfully updated.' }
         format.json { render :show, status: :ok, location: @status_update }
       else
         format.html { render :edit }

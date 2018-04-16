@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :status_post %>
-    <%= form.text_area :status_post, id: :status_update_status_post %>
+    <%= form.text_area :status_post, id: :status_update_status_post, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Submit', class: 'btn btn-danger' %>
   </div>
 <% end %>
