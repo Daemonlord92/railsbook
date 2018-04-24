@@ -1,30 +1,23 @@
 class StatusUpdatesController < ApplicationController
   before_action :set_status_update, only: [:show, :edit, :update, :destroy]
 
-  # GET /status_updates
-  # GET /status_updates.json
   def index
-    @status_updates = StatusUpdate.all
+    @status_updates = StatusUpdate.recent.all
   end
 
-  # GET /status_updates/1
-  # GET /status_updates/1.json
   def show
   end
 
-  # GET /status_updates/new
   def new
     @status_update = StatusUpdate.new
   end
 
-  # GET /status_updates/1/edit
   def edit
   end
 
-  # POST /status_updates
-  # POST /status_updates.json
   def create
     @status_update = StatusUpdate.new(status_update_params)
+    @status_update.user_id =current_user.id
 
     respond_to do |format|
       if @status_update.save
@@ -37,8 +30,6 @@ class StatusUpdatesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /status_updates/1
-  # PATCH/PUT /status_updates/1.json
   def update
     respond_to do |format|
       if @status_update.update(status_update_params)
@@ -51,8 +42,6 @@ class StatusUpdatesController < ApplicationController
     end
   end
 
-  # DELETE /status_updates/1
-  # DELETE /status_updates/1.json
   def destroy
     @status_update.destroy
     respond_to do |format|
@@ -62,13 +51,14 @@ class StatusUpdatesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_status_update
       @status_update = StatusUpdate.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def status_update_params
-      params.require(:status_update).permit(:status_post)
+      params.require(:status_update).permit(
+        :status_post,
+         :user_id,
+         )
     end
 end

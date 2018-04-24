@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+@user = User.create(email: "user@test.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+puts '1 user created'
+
 20.times do |status_update|
-	StatusUpdate.create!(status_post: "Lorem ipsum dolor sit amet.")
+	StatusUpdate.create!(status_post: "Lorem ipsum dolor sit amet.", user_id: User.last.id)
 end
 puts '20 status updates created!'

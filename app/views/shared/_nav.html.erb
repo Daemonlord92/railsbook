@@ -2,17 +2,12 @@
 	<div class="logo">
 		<h1>Railsbook</h1>
 	</div>
-	<ul class="nav">
-				<li class="nav-item">
-					<%= link_to "Home", root_path %>
-				</li>
-				<li class="nav-item dropdown ml-md-auto">
-					 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Account</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						 <%= link_to "Home", root_path %>
-						<div class="dropdown-divider">
-						</div> <%= login_helper 'dropdown-item' %> 
-					</div>
-				</li>
-			</ul>
+	<ul class="nav cus-nav">
+		<li class="nav-item">
+			<%= link_to "Home", root_path, class: 'cus-nav' %>
+		</li>
+		<li class="nav-item">
+			<%= login_helper 'cus-nav' %>
+		</li>
+	</ul>
 </div>

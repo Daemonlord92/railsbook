@@ -5,8 +5,10 @@
 
 > Current Steps
 
-- devise setup and silght config
+- Configuring petergate and setting up roles
+- Configuring Devise views
 
 > Finished Steps
 
 - setup of pages and controllers
+- devise setup and silght config
