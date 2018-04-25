@@ -45,7 +45,7 @@ class StatusUpdatesController < ApplicationController
   def destroy
     @status_update.destroy
     respond_to do |format|
-      format.html { redirect_to status_updates_url, notice: 'Status update was successfully destroyed.' }
+      format.html { redirect_to status_updates_url, notice: 'Status update was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -2,5 +2,8 @@
 	<p class="status-post">
 	  <%= sp.status_post %>
 	</p>
+	<p class="sp-links">
+		<%= link_to 'Delete', root_path(@status_update), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
 <% end %>
 
