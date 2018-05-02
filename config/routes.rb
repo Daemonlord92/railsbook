@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :status_updates
-  get 'pages/home'
 
   get 'pages/friends'
 

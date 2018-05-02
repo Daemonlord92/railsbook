@@ -17,4 +17,5 @@ class PagesController < ApplicationController
   def loginregistar
     @user = User.new
   end
+
 end
