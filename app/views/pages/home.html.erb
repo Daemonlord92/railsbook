@@ -3,7 +3,9 @@
 	<%= render 'status_updates/form' %>
 </div>
 <div class="col-md-4">
+	<%= paginate @status_updates %>
 	<%= render 'status_updates/show' %>
+	<%= paginate @status_updates %>
 </div>
 <div class="col-md-4">
 	
