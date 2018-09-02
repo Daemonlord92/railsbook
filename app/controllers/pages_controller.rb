@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@status_updates = StatusUpdate.page(params[:page]).per(5)
+  	@status_updates = StatusUpdate.recent.page(params[:page]).per(5)
   	@status_update = StatusUpdate.new
 
   end
